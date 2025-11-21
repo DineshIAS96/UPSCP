@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+  <link rel="stylesheet" href="https://pawantestportal.com/Tool/PDF/1.css">
+</head>
+
+<body>
+    <div class="container">
+        
+        <div id="page1" class="page active">
+            <h1>📚 Student Registration</h1>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">आपका नाम</label>
+                    <input type="text" id="name" required placeholder="अपना पूरा नाम लिखें">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="gender-group">
+                        <div class="gender-option">
+                            <input type="radio" id="boy" name="gender" value="Boy" required>
+                            <label for="boy">👨 Boy</label>
+                        </div>
+                        <div class="gender-option">
+                            <input type="radio" id="girl" name="gender" value="Girl" required>
+                            <label for="girl">👩 Girl</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp Number</label>
+                    <input type="text" id="whatsapp" required placeholder="10 digits या +91 के साथ"
+                        pattern="(\+91)?[0-9]{10}">
+                </div>
+
+                <button type="submit" id="nextBtn">Next →</button>
+            </form>
+        </div>
+
+        
+        <div id="page2" class="page">
+            <h1>🔐 Password Entry</h1>
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label for="password">Password दर्ज करें</label>
+                    <input type="password" id="password" required placeholder="Password">
+                </div>
+
+                <button type="submit" id="verifyBtn">Verify Password</button>
+
+                <div class="password-help">
+                    <p style="margin-bottom: 10px; color: #666; font-weight: 600;">⚠️ Password नहीं है या Wrong बता रहा
+                        है?</p>
+                    <p style="margin-bottom: 15px; color: #333; font-size: 15px;">तो नीचे 👇 <strong>Green
+                            Button</strong> पर Click करें</p>
+                    <a href="#" class="whatsapp-btn" id="getPasswordBtn">
+                        Click Here to Get Password
+                    </a>
+                </div>
+
+                <div id="error" class="error" style="display: none;"></div>
+            </form>
+        </div>
+
+        
+        <div id="page3" class="page">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <div>
+                        <h2 id="userName">Welcome!</h2>
+                        <p id="userGender"></p>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+
+            <h1>📖 Study Material</h1>
+
+            <div class="categories">
+                <div class="category-btn active" data-category="upsc_pyqs_eng_book">
+                    📚 UPSC PYQs Eng Book (Click Here)
+                </div>
+            </div>
+
+            <div id="pdfList" class="pdf-list">
+                <div class="loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="pdfViewer" class="pdf-viewer">
+        <div class="pdf-controls">
+            <h3 style="color: white; margin: 0;" id="pdfTitle">Document</h3>
+            <button class="close-btn" id="closePdfBtn">✕ Close</button>
+        </div>
+        <iframe id="pdfFrame" class="pdf-frame"></iframe>
+    </div>
+
+    <script src="https://pawantestportal.com/Tool/PDF/1.js"></script>
+</body>
+
+</html>
